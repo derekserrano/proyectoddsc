@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Números primos del 1 al 100</title>
+</head>
+<body>
+	<h1>Números primos del 1 al 100</h1>
+	<ul id="primos"></ul>
+
+	<script>
+		// Función para verificar si un número es primo
+		function esPrimo(num) {
+		  for(let i = 2; i < num; i++)
+		    if(num % i === 0) return false;
+		  return num !== 1;
+		}
+
+		// Obtener el elemento ul en el que se mostrarán los números primos
+		const ulPrimos = document.getElementById("primos");
+
+		// Iterar desde el 1 hasta el 100 y agregar los números primos a la lista
+		for (let i = 1; i <= 100; i++) {
+		  if (esPrimo(i)) {
+		    const li = document.createElement("li");
+		    li.textContent = i;
+		    ulPrimos.appendChild(li);
+		  }
+		}
+	</script>
+</body>
+</html>
